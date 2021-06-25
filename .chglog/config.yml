@@ -1,0 +1,27 @@
+style: github
+template: CHANGELOG.tpl.md
+info:
+  title: CHANGELOG
+  repository_url: https://github.com/kohirens/aws-tf-route53-record
+options:
+  commits:
+     filters:
+       Type:
+         - add
+         - fix
+         - rmv
+         - chg
+  commit_groups:
+     title_maps:
+       add: Added Features
+       fix: Fixed
+       rmv: Removed
+       chg: Changed (Code/Features)
+  header:
+    pattern: "^(\\w*)\\:\\s(.*)$"
+    pattern_maps:
+      - Type
+      - Subject
+  notes:
+    keywords:
+      - BREAKING CHANGE
