@@ -2,6 +2,8 @@
 
 ## Resources
 
-The following resources will be made.
+The following Route 53 resources can be made:
 
-* Route 53 record - Can be of type A or NS.
+* A record
+* NS record
+* Hosted zone
