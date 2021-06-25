@@ -1,3 +1,8 @@
+resource "aws_route53_zone" "zone" {
+  count = var.type == "zone" ? 1 : 0
+  name  = var.domain_name
+}
+
 resource "aws_route53_record" "ns_record" {
   count           = var.type == "NS" ? 1 : 0
   allow_overwrite = true

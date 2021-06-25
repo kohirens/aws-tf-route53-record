@@ -29,6 +29,7 @@ variable "domain_name" {
 variable "ns_records" {
   description = "A list of NS records. Required if record type is \"NS\"."
   type        = list(string)
+  default     = null
 }
 
 variable "type" {
@@ -37,6 +38,7 @@ variable "type" {
 }
 
 variable "zone_id" {
-  description = "A Route 53 hosted zone ID."
+  default     = null
+  description = "A Route 53 hosted zone ID. Required for records types such as \"A\" and \"NS\""
   type        = string
 }
