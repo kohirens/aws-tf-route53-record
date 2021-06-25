@@ -1,10 +1,17 @@
 ## [Unreleased]
+
 ## [0.1.0] - 2021-06-25
 
 ### Added Features
 
 - CHANGELOG.md.
 - Ability to make a new hosted zone.
+
+
+### Changed (Code/Features)
+
+- Updated README.md
+
 
 ## 0.0.1 - 2021-05-16
 
