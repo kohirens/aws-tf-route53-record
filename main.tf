@@ -9,7 +9,7 @@ resource "aws_route53_record" "ns_record" {
   name            = var.domain_name
   type            = "NS"
   records         = var.ns_records
-  ttl             = 172800
+  ttl             = var.ns_ttl
   zone_id         = var.zone_id
 }
 

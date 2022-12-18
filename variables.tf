@@ -32,6 +32,12 @@ variable "ns_records" {
   default     = null
 }
 
+variable "ns_ttl" {
+  default     = 172800
+  description = "Time to live in seconds."
+  type        = number
+}
+
 variable "type" {
   description = "Record type."
   type        = string
