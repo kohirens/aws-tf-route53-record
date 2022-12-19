@@ -12,14 +12,14 @@ parameters:
     default: kohirens-automation-dockerhub
     description: Secrets context
     type: string
-  secrets_iac:
+  secrets_iac_test:
     default: kohirens-iac-test
     description: Secrets context
     type: string
   ssh_finger:
     description: SSH fingerprint.
     type: string
-    default: ""
+    default: "e3:e6:60:88:13:2d:9e:6b:9e:71:f8:e7:ac:3e:66:fa"
   triggered_by_bot:
     default: false
     description: Trigger publishing a release tag workflow.
@@ -45,7 +45,7 @@ workflows:
       - run-test:
           context:
             - << pipeline.parameters.secrets_docker >>
-            - << pipeline.parameters.secrets_iac >>
+            - << pipeline.parameters.secrets_iac_test >>
           filters: { branches: { ignore: /main|auto-update-changelog/ } }
 
   publish-changelog:
