@@ -9,6 +9,8 @@
 The following Route 53 resources can be made:
 
 * A record
+* CNAME record
 * Hosted zone
 * MX record
 * NS record
+* TXT record
