@@ -1,35 +1,3 @@
-# obsolete, will be removed in the next major release.
-resource "aws_route53_zone" "zone" {
-  count = var.type == "zone" ? 1 : 0
-  name  = var.domain_name
-}
-
-# obsolete, will be removed in the next major release.
-resource "aws_route53_record" "ns_record" {
-  count           = var.type == "NS" ? 1 : 0
-  allow_overwrite = true
-  name            = var.domain_name
-  type            = "NS"
-  records         = var.ns_records
-  ttl             = var.ns_ttl
-  zone_id         = var.zone_id
-}
-
-# obsolete, will be removed in the next major release.
-resource "aws_route53_record" "a_record" {
-  count           = var.type == "A" ? 1 : 0
-  allow_overwrite = true
-  name            = var.domain_name
-  type            = "A"
-  zone_id         = var.zone_id
-
-  alias {
-    evaluate_target_health = var.alias_evaluate_target_health
-    name                   = var.alias_regional_domain_name
-    zone_id                = var.alias_zone_id
-  }
-}
-
 resource "aws_route53_record" "a_records" {
   count           = var.a_records == null ? 0 : length(var.a_records)
   allow_overwrite = var.a_records[count.index].allow_overwrite
