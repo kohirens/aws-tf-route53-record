@@ -25,15 +25,15 @@ provider "aws" {
 module "main" {
   source      = "../.."
   aws_region  = local.aws_region
-  domain_name = null # required until they are removed in the next major release
-  type        = null # required until they are removed in the next major release
+  domain_name = "" # required until they are removed in the next major release
+  type        = "" # required until they are removed in the next major release
   public_zones = [
     {
-      domain_name       = "terraform.kohirens.com"
       allow_overwrite   = false
       comment           = "Manage By Terraform test"
-      delegation_set_id = null
-      force_destroy     = false
+      delegation_set_id = ""
+      domain_name       = "terraform.kohirens.com"
+      force_destroy     = true
     },
   ]
 }
@@ -46,14 +46,14 @@ module "records" {
   ]
 
   aws_region  = local.aws_region
-  domain_name = null # required until they are removed in the next major release
-  type        = null # required until they are removed in the next major release
+  domain_name = "" # required until they are removed in the next major release
+  type        = "" # required until they are removed in the next major release
   records = [
     {
       zone_id         = module.main.public_hosted_zones[0].zone_id
       allow_overwrite = false
       name            = "terraform-test"
-      ttl             = null
+      ttl             = 60
       type            = "TXT"
       value           = ["TerraformTest"]
     },
@@ -63,15 +63,14 @@ module "records" {
 resource "test_assertions" "a_new_zone_was_made" {
   component = "a_new_zone_was_made"
 
-  equal "scheme" {
+  check "hosted_zone" {
     description = "assert hosted zone was made"
-    got         = module.main.public_hosted_zones[0].name
-    want        = "terraform.kohirens.com"
+    condition   = can(regex("^[A-Z0-9]{10,32}", module.main.public_hosted_zones[0].zone_id))
   }
 
   equal "txt_record" {
     description = "assert TXT record was made"
-    got         = module.records.records[0].zone_id
-    want        = module.main.public_hosted_zones[0].zone_id
+    got         = module.records.records[0].fqdn
+    want        = "terraform-test.${module.main.public_hosted_zones[0].name}"
   }
 }
