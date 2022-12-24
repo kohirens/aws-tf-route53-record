@@ -57,6 +57,7 @@ output "public_hosted_zones" {
 output "records" {
   description = "Records added"
   value = [for i, v in aws_route53_record.records : {
+    fqdn    = v.fqdn
     name    = v.name
     type    = v.type
     zone_id = v.zone_id
