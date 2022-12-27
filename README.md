@@ -2,7 +2,7 @@
 
 ## Status
 
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/kohirens/aws-tf-route53-record/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/kohirens/aws-tf-route53-record/tree/main)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/kohirens/aws-tf-route53-record/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/kohirens/aws-tf-route53-record/tree/main)
 
 ## Resources
 
