@@ -3,60 +3,6 @@ variable "aws_region" {
   type        = string
 }
 
-# obsolete, will be removed in the next major release.
-variable "alias_evaluate_target_health" {
-  description = "Obsolete, see a_records variable. Evaluate the health of the alis. Required if record type is \"A\"."
-  type        = bool
-  default     = true
-}
-
-# obsolete, will be removed in the next major release.
-variable "alias_regional_domain_name" {
-  description = "Obsolete, see a_records variable. The regional domain name for the alias. Required if record type is \"A\"."
-  type        = string
-  default     = null
-}
-
-# obsolete, will be removed in the next major release.
-variable "alias_zone_id" {
-  description = "Obsolete, see a_records variable. Hosted zone ID for a CloudFront distribution, S3 bucket, ELB, or Route 53 hosted zone. Required if record type is \"A\"."
-  type        = string
-  default     = null
-}
-
-# obsolete, will be removed in the next major release.
-variable "domain_name" {
-  description = "Obsolete see a_records, ns_recs, and etc. The domain name, for example: test.example.com."
-  type        = string
-}
-
-# obsolete, will be removed in the next major release.
-variable "ns_records" {
-  description = "Obsolete, use `ns_recs`. A list of NS records. Required if record type is \"NS\"."
-  type        = list(string)
-  default     = null
-}
-
-# obsolete, will be removed in the next major release.
-variable "ns_ttl" {
-  default     = 172800
-  description = "Obsolete, use `ns_recs`. Time to live in seconds."
-  type        = number
-}
-
-# obsolete, will be removed in the next major release.
-variable "type" {
-  description = "Obsolete, see `ns_recs` or `a_records` and etc. Record type."
-  type        = string
-}
-
-# obsolete, will be removed in the next major release.
-variable "zone_id" {
-  default     = null
-  description = "Obsolete see a_records, ns_recs, and etc. A Route 53 hosted zone ID. Required for records types such as \"A\" and \"NS\""
-  type        = string
-}
-
 variable "a_records" {
   default     = null
   description = "A list of AWS alias (A) records to add to a hosted zone."

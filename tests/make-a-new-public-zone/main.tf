@@ -25,8 +25,6 @@ provider "aws" {
 module "main" {
   source      = "../.."
   aws_region  = local.aws_region
-  domain_name = "" # required until they are removed in the next major release
-  type        = "" # required until they are removed in the next major release
   public_zones = [
     {
       allow_overwrite   = false
@@ -46,8 +44,6 @@ module "records" {
   ]
 
   aws_region  = local.aws_region
-  domain_name = "" # required until they are removed in the next major release
-  type        = "" # required until they are removed in the next major release
   records = [
     {
       zone_id         = module.main.public_hosted_zones[0].zone_id
