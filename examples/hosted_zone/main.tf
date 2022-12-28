@@ -4,7 +4,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = ">=3.40.0, <5.0.0"
+      version = ">=4.48.0, <5.0.0"
     }
   }
 }
@@ -18,10 +18,10 @@ module "main" {
   aws_region = var.aws_region
   public_zones = [
     {
-      domain_name       = "terraform.kohirens.com"
+      domain_name       = "terraform.example.com"
       allow_overwrite   = false
-      comment           = "Manage By Terraform test"
-      delegation_set_id = null
+      comment           = "Manage By Terraform"
+      delegation_set_id = ""
       force_destroy     = false
     },
   ]
