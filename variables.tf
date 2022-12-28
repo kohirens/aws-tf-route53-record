@@ -9,7 +9,6 @@ variable "a_records" {
   type = list(object({
     allow_overwrite = bool
     domain_name     = string
-    type            = string
     zone_id         = string
     alias = object({
       evaluate_target_health = bool
