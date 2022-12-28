@@ -74,7 +74,7 @@ variable "a_records" {
 }
 
 # Will be renamed to `ns_records` in the next major release.
-variable "ns_recs" {
+variable "ns_records" {
   default     = null
   description = "A list of name server (NS) records to add to a hosted zone."
   type = list(object({
