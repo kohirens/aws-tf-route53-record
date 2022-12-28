@@ -1,6 +1,22 @@
 ## [Unreleased]
 
-## [2.0.1] - 2022-12-27
+## [2.0.1] - 2022-12-28
+
+### Changed (Code/Features)
+
+- Added More Examples
+
+
+### Fixed
+
+- Missed Renameing ns_recs To ns_records
+
+
+### Removed
+
+- Unused type Field In a_records Variable
+- Obsolete Variables
+
 
 ## [2.0.0] - 2022-12-27
 
