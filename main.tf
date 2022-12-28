@@ -13,13 +13,13 @@ resource "aws_route53_record" "a_records" {
 }
 
 resource "aws_route53_record" "ns_records" {
-  count           = var.ns_recs == null ? 0 : length(var.ns_recs)
-  allow_overwrite = var.ns_recs[count.index].allow_overwrite
-  name            = var.ns_recs[count.index].domain_name
-  records         = var.ns_recs[count.index].name_servers
-  ttl             = var.ns_recs[count.index].ttl
+  count           = var.ns_records == null ? 0 : length(var.ns_records)
+  allow_overwrite = var.ns_records[count.index].allow_overwrite
+  name            = var.ns_records[count.index].domain_name
+  records         = var.ns_records[count.index].name_servers
+  ttl             = var.ns_records[count.index].ttl
   type            = "NS"
-  zone_id         = var.ns_recs[count.index].zone_id
+  zone_id         = var.ns_records[count.index].zone_id
 }
 
 resource "aws_route53_zone" "private_zones" {
