@@ -9,7 +9,7 @@ terraform {
     }
     aws = {
       source  = "hashicorp/aws"
-      version = ">=3.40.0, <5.0.0"
+      version = ">=4.48.0, <5.0.0"
     }
   }
 }
@@ -38,11 +38,6 @@ module "main" {
 
 module "records" {
   source = "../.."
-
-  depends_on = [
-    module.main
-  ]
-
   aws_region  = local.aws_region
   records = [
     {
