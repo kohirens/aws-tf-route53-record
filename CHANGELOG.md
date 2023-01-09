@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [2.0.2] - 2023-01-04
+
 ## [2.0.1] - 2022-12-28
 
 ### Changed (Code/Features)
@@ -60,7 +62,8 @@
 
 ---
 
-[Unreleased]: https://github.com/kohirens/aws-tf-route53-record/compare/2.0.1...HEAD
+[Unreleased]: https://github.com/kohirens/aws-tf-route53-record/compare/2.0.2...HEAD
+[2.0.2]: https://github.com/kohirens/aws-tf-route53-record/compare/2.0.1...2.0.2
 [2.0.1]: https://github.com/kohirens/aws-tf-route53-record/compare/2.0.0...2.0.1
 [2.0.0]: https://github.com/kohirens/aws-tf-route53-record/compare/1.0.0...2.0.0
 [1.0.0]: https://github.com/kohirens/aws-tf-route53-record/compare/0.1.0...1.0.0
